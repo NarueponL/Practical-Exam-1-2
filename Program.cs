@@ -7,12 +7,12 @@ namespace part3
         static void Main(string[] args)
         {
             //input
-            Console.Write("Input Number In Box A : ");
-            int numberBoxA = int.Parse(Console.ReadLine());
-            Console.Write("Input Number In Box B : ");
-            int numberBoxB = int.Parse(Console.ReadLine());
-            Console.Write("Input Number In Box C : ");
-            int numberBoxC = int.Parse(Console.ReadLine());
+            Console.Write("Input Number In Box 1 : ");
+            int numberBox1 = int.Parse(Console.ReadLine());
+            Console.Write("Input Number In Box 2 : ");
+            int numberBox2 = int.Parse(Console.ReadLine());
+            Console.Write("Input Number In Box 3 : ");
+            int numberBox3 = int.Parse(Console.ReadLine());
             int turnCount = 1;
             bool gameOverCheck = false;
             while (gameOverCheck == false)
@@ -20,31 +20,31 @@ namespace part3
                 Console.WriteLine("\n----------------------------------------------------------------------\n");
                 Console.WriteLine("Turn : " + turnCount);
                 //status a
-                Console.WriteLine("Box A = {0}\tBox B = {1}\tBox C = {2}", numberBoxA, numberBoxB, numberBoxC);
+                Console.WriteLine("Box 1 = {0}\tBox 2 = {1}\tBox 3 = {2}", numberBox1, numberBox2, numberBox3);
                 
                 //player a
                 Console.WriteLine("\tTurn PlayerA");
                 Console.Write("Choose Box : ");
-                string chooseBox = Console.ReadLine();
+                int chooseBox = int.Parse(Console.ReadLine());
                 Console.Write("How many Box Remove? : ");
                 int removeBox = int.Parse(Console.ReadLine());
                 switch (chooseBox)
                 {
-                    case "A":
-                        numberBoxA -= removeBox;
+                    case 1:
+                        numberBox1 -= removeBox;
                         break;
-                    case "B":
-                        numberBoxB -= removeBox;
+                    case 2:
+                        numberBox2 -= removeBox;
                         break;
-                    case "C":
-                        numberBoxC -= removeBox;
+                    case 3:
+                        numberBox3 -= removeBox;
                         break;
                     default:
                         break;
                 }
                 
                 //check player a
-                if(numberBoxA == 0 && numberBoxB == 0 && numberBoxC == 0)
+                if(numberBox1 == 0 && numberBox2 == 0 && numberBox3 == 0)
                 {
                     gameOverCheck = true;
                     Console.WriteLine("**********    Game Over Player B Win    **********");
@@ -55,31 +55,31 @@ namespace part3
 
                 //status b
                 Console.WriteLine("Turn : " + turnCount);
-                Console.WriteLine("Box A = {0}\tBox B = {1}\tBox C = {2}", numberBoxA, numberBoxB, numberBoxC);
+                Console.WriteLine("Box 1 = {0}\tBox 2 = {1}\tBox 3 = {2}", numberBox1, numberBox2, numberBox3);
 
                 //player b
                 Console.WriteLine("\tTurn PlayerB");
                 Console.Write("Choose Box : ");
-                chooseBox = Console.ReadLine();
+                chooseBox = int.Parse(Console.ReadLine());
                 Console.Write("How many Box Remove? : ");
                 removeBox = int.Parse(Console.ReadLine());
                 switch (chooseBox)
                 {
-                    case "A":
-                        numberBoxA -= removeBox;
+                    case 1:
+                        numberBox1 -= removeBox;
                         break;
-                    case "B":
-                        numberBoxB -= removeBox;
+                    case 2:
+                        numberBox2 -= removeBox;
                         break;
-                    case "C":
-                        numberBoxC -= removeBox;
+                    case 3:
+                        numberBox3 -= removeBox;
                         break;
                     default:
                         break;
                 }
                 
                 //check player b
-                if (numberBoxA == 0 && numberBoxB == 0 && numberBoxC == 0)
+                if (numberBox1 == 0 && numberBox2 == 0 && numberBox3 == 0)
                 {
                     gameOverCheck = true;
                     Console.WriteLine("**********     Game Over Player A Win    **********");
